@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Addtransaction } from './components/Addtransaction';
+import { Balance } from './components/Balance';
+import { IncomeExpense } from './components/IncomeExpense';
+import { TransactionList } from './components/TransactionList';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+        <div className="flex flex-col flex-wrap content-center  m-8 p-8">
+          <h1 className="text-4xl">Expense Tracker</h1>
+          <Balance />
+          <IncomeExpense />
+          <TransactionList />
+          <Addtransaction />
+          <div className="text-xs text-gray-400 mt-2">The values will be removed on reload </div>
+        </div>
+    </GlobalProvider>
+    
+      
+   
   );
 }
 

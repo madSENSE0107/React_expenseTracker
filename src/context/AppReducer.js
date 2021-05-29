@@ -1,4 +1,5 @@
-export default(state,action)=>{
+
+const red = (state,action)=>{
     switch(action.type){
         case 'DELETE_TRANSACTION':
             return {
@@ -11,8 +12,14 @@ export default(state,action)=>{
             return {
               ...state,
               transactions: [action.payload, ...state.transactions]
+              //creating a new array where the old data is kept along with the new data 
+              //here data is object and spread operator is used 
             }
         default:
             return state
     }
 }
+
+
+
+export default red;

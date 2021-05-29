@@ -14,7 +14,7 @@ export const Balance = () => {
     return (
         <div className="mt-8 text-2xl">
             Balance
-            <div className="text-green-700">{total}</div>
+            <div className="text-gray-700">{total}</div>
         </div>
     )
 }
